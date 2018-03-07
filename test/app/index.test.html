@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/mfly-commands/src/mflyCommands.js"></script>
+    <script type="text/javascript" src="js/mflyDeveloperTools.js"></script>
+    <script type="text/javascript">
+        function mflySyncStatus() {
+
+        }
+
+        function mflyInit() {
+
+        }
+
+        function mflyDataInit() {
+
+        }
+
+        function mflyDownloadStatus() {
+
+        }
+
+        function mflyResume() {
+
+        }
+
+        function mflyPause() {
+
+        }
+        
+        function getInteractiveInfo() {
+            mflyCommands.getInteractiveInfo().done(function(_data, _status, _xhr) {
+                $("#log_interactiveinfo").html(JSON.stringify(_data, undefined, 2));
+            });
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>mfly-interactive</h1>
+    <div class="testing"><%= timestamp %></div>
+    <p>This Interactive shows a number of Interactive features in action.</p>
+    <h3>Core commands</h3>
+    <div>
+        <button class="feature" onclick="getInteractiveInfo();">Get Interactive Info</button>
+    </div>
+    <div><code id="log_interactiveinfo"></code></div>
+
+    <h3>App Features</h3>
+    <div>
+        <button class="feature" onclick="mflyCommands.addToDownloader('9cf282320e6340ee8b830e5376d54531product168577');">Add to Downloader (Big Buck Bunny, ~65MB)</button>
+        <button class="feature" onclick="mflyCommands.removeFromDownloader('9cf282320e6340ee8b830e5376d54531product168577');">Remove from Downloader (Big Buck Bunny)</button>
+        <button class="feature" onclick="mflyCommands.showDownloader(70, 220);">Show Downloader</button>
+    </div>&nbsp;
+    <div>
+        <button class="feature" onclick="mflyCommands.showSettings(70, 220);">Show Settings</button>
+        <button class="feature" onclick="mflyCommands.showAnnotations();">Show Annotations</button>
+        <button class="feature" onclick="mflyCommands.takeAndEmailScreenshot();">Take and email Screenshot</button>
+        <button class="feature" onclick="mflyCommands.showSecondScreenOptions();">Show Second Screen Options</button>
+        <button class="feature" onclick="mflyCommands.showControlBars();">Show Control Bars</button>
+    </div>
+    <hr width="100%" />
+    <p style="color: lightgray; font-size: small">Version 5</p>
+    <button onclick="mflyCommands.close();" class="exit">Exit</button>
+    <button onclick="mflyCommands.logout();" class="logout">Logout</button>
+</body>
+</html>

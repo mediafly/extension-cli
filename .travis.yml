@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - "8"
+  - "7"
+  - "6"
+
+script:
+  - npm test
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email:
+    - nmehta@mediafly.com
+
+sudo: false

@@ -1,0 +1,45 @@
+{
+  "name": "@mediafly/extension-cli",
+  "version": "2.0.1",
+  "description": "Allows local development of extensions using real data.",
+  "main": "lib/proxy.js",
+  "author": "Mediafly Inc.",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mediafly/mfly-interactive"
+  },
+  "engines": {
+    "node": ">=6.9.5"
+  },
+  "dependencies": {
+    "async-kit": "2.2.3",
+    "bonjour": "3.5.0",
+    "browser-sync": "2.12.5",
+    "chalk": "1.1.3",
+    "cli-spinner": "0.2.5",
+    "connect-modrewrite": "0.10.1",
+    "del": "2.2.2",
+    "inquirer": "1.2.2",
+    "ip": "1.1.4",
+    "lodash": "4.17.4",
+    "opn": "4.0.2",
+    "q": "1.4.1",
+    "random-words": "0.0.1",
+    "request": "2.72.0",
+    "update-notifier": "1.0.2",
+    "uuid": "3.0.1",
+    "winston": "2.2.0",
+    "yargs": "7.1.0",
+    "zip-folder": "1.0.0"
+  },
+  "bin": {
+    "extension-cli": "bin/index.js"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0"
+  }
+}

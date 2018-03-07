@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Access Token</title>
+</head>
+<body>
+	<h1>Access Token: <span id="accessToken"></span></h1>
+	<script>
+		function getQueryParams() {
+			return window.location.search.slice(1)
+				.split('&')
+				.reduce(function _reduce (/*Object*/ a, /*String*/ b) {
+					b = b.split('=');
+					a[b[0]] = decodeURIComponent(b[1]);
+					return a;
+				}, {});
+		}
+
+		var accessToken = getQueryParams().accessToken;
+
+		window.document.getElementById('accessToken').innerHTML = accessToken;
+	</script>
+</body>
+</html>

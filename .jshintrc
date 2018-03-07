@@ -1,0 +1,28 @@
+{
+  "asi": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "esnext": true,
+  "forin": true,
+  "freeze": true,
+  "immed": true,
+  "indent": 1,
+  "jasmine": true,
+  "mocha": true,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "node": true,
+  "nonbsp": true,
+  "nonew": true,
+  "undef": true,
+  "unused": true,
+  "predef": [
+    "_",
+    "___browserSync___",
+    "mflyCommands",
+    "window",
+    "StackTrace"
+  ]
+}
