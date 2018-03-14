@@ -31,10 +31,10 @@ describe('mfly-interactive', function() {
 		})	
 	})
 
-	it('Should produce .interactive file from release command', done => {
-		exec('rm test/app/app.interactive', () => {
+	it('Should produce .mext file from release command', done => {
+		exec('rm test/app/app.mext', () => {
 			exec('node ../../bin/index release --config mfly-interactive-node' + process.version[1] + '.config.json', { cwd: 'test/app' }, err => {
-				assert(existsSync('test/app/app.interactive'), 'app.interactive was not created by the release command')
+				assert(existsSync('test/app/app.mext'), 'app.mext was not created by the release command')
 				done(err)
 			})
 		})
@@ -49,6 +49,7 @@ describe('mfly-interactive', function() {
 		}
 
 		function waitUntilAssetStateIsProcessed(cb) {
+			console.log('waiting for the asset to be processed')
 			var timer = setInterval(() => {
 				getItemAssetState(config.itemId, config.productId, config.accessToken, assetState => {
 					if (assetState === 'processed') {
@@ -69,7 +70,7 @@ describe('mfly-interactive', function() {
 		}
 			
 		transformHtml()
-		exec('rm test/app/app.interactive', () => {
+		exec('rm test/app/app.mext', () => {
 			exec('node ../../bin/index publish --config mfly-interactive-node' + process.version[1] + '.config.json', { cwd: 'test/app' }, () => {
 				//verify interactive was published
 				waitUntilAssetStateIsProcessed(() => {

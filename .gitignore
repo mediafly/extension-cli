@@ -27,8 +27,8 @@ build/Release
 node_modules
 
 # App sepcific
-archive.interactive
-app.interactive
+archive.mext
+app.mext
 
 # Vagrant
 .vagrant
