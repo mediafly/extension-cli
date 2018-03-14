@@ -72,7 +72,7 @@ yargs
 				openInViewer()
 			})
 	})
-	.command('release', 'Create the .interactive archive', function() {
+	.command('release', 'Create the .mext archive', function() {
 		release(function(err) {
 			if (err) {
 				console.log(err)
