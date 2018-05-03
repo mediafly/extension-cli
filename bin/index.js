@@ -4,12 +4,12 @@ var yargs = require('yargs')
 var opn = require('opn')
 var chalk = require('chalk')
 var release = require('../lib/release')
+var util = require('../lib/util')
 require('../lib/updateNotifier')
 require('../lib/configureWinston')
 
 function upload() {
-	var configFilePath = path.join(process.cwd(), yargs.argv.config)
-	var options = require(configFilePath)
+	var options = util.getOptions()
 	require('../lib/publish')(options.accessToken, options.productId, options.itemId)
 }
 
@@ -58,7 +58,9 @@ yargs
 		serve()
 	})
 	.command('init', 'Initialize', function() {
-		require('../lib/init')()
+		require('../lib/init')(() => {
+			upload()
+		})
 	})
 	.command('publish', 'Create release and upload to Airship', function() {
 		upload()
