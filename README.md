@@ -16,9 +16,14 @@ Start developing locally:
 
 ## Initialize
 
-1. Run `extension-cli init`. See [Explanation for required parameters](#explanation-for-required-parameters) for details on how to find information requested by this command.
+Run `extension-cli init`. See [Explanation for required parameters](#explanation-for-required-parameters) for details on how to find information requested by this command.
 
 Note: The `init` command creates `mfly-interactive.config.json` at the root of your Extension. `mfly-interactive.config.json` contains Airship user specific information. Be sure to add it to your `.gitignore` file.
+
+## Develop Locally
+
+Run `extension-cli serve`. This command will start a new BrowserSync server which will proxy Viewer and serve local Extension files.
+
 
 **Please note that local changes to the Extension will not update the uploaded Extension. When finished making changes, you will need to upload the Extension in Airship again.**
 
