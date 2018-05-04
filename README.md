@@ -1,52 +1,29 @@
 # Mediafly Extensions CLI
 
-## Install
+## Quick Start
 
-### Option 1: Global install (if you are not using build tools such as gulp)
+Install extension-cli as a global dependency from `npm`:
 
-Enter the following in the terminal
+	$ npm install @mediafly/extension-cli -g
 
-	$ npm install -g @mediafly/extension-cli
+Initialize a new Extension project:
 
-Run in the folder where the Extension is located.
+	$ extension-cli init
+
+Start developing locally:
 
 	$ extension-cli serve
 
-### Option 2: Local install (if you have gulp, grunt, etc. with a static file server)
-
-This package can also be used as a node.js middleware. You can plug in this middleware in the static file server responsible for serving up your Extension.
-
-
-Enter the following in the terminal
-
-	$ npm install @mediafly/extension-cli --save-dev
-
-Here is an example of how to set up a [BrowserSync](http://www.browsersync.io/) server. The same can be done with any connect server as well. Here, the middleware provided by `extension-cli` can be supplied to your server.
-
-
-	var browserSync = require("browser-sync")
-	var options = require('./mfly-interactive.config.json')
-	//Viewer slug is required here
-	options.slug = '{VIEWER_SLUG}'
-	var viewerMiddleware = require('@mediafly/extension-cli')(options)
-		
-	browserSync({
-		files: 'app/**',
-		https: true,
-		server: {
-			baseDir: './app',
-			middleware: [
-				viewerMiddleware
-			]
-		}
-	})
-
 ## Initialize
 
-1. Upload the Extension into Airship
-2. Run `extension-cli init`. See [Explanation for required parameters](#explanation-for-required-parameters) for details on how to find information requested by this command.
+Run `extension-cli init`. See [Explanation for required parameters](#explanation-for-required-parameters) for details on how to find information requested by this command.
 
 Note: The `init` command creates `mfly-interactive.config.json` at the root of your Extension. `mfly-interactive.config.json` contains Airship user specific information. Be sure to add it to your `.gitignore` file.
+
+## Develop Locally
+
+Run `extension-cli serve`. This command will start a new BrowserSync server which will proxy Viewer and serve local Extension files.
+
 
 **Please note that local changes to the Extension will not update the uploaded Extension. When finished making changes, you will need to upload the Extension in Airship again.**
 
@@ -103,7 +80,7 @@ Below are some examples:
 ## Explanation for Required Parameters
 
 - Airship User ID and Password: Credentials used to log into [https://airship.mediafly.com](airship.mediafly.com)
-- Airship Item Id: This is the Id for the Extension in Airship. You can locate it by navigating to the item in Airship and extractig it from the URL. In the following example, the Airship item Id is 0-265955-265962. ![](airship-item-id.JPG)
+- Airship Folder Id: This is the Id for a folder in Airship where the Extension will be created. You can locate it by navigating to the item in Airship and extractig it from the URL. In the following example, the Airship folder Id is 0-411367-411368. ![](airship-item-id.JPG)
 - Company Code: Company code used in Viewer.
 
 ## Reconfiguring
