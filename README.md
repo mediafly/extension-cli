@@ -27,9 +27,9 @@ Run `extension-cli serve`. This command will start a new BrowserSync server whic
 
 **Please note that local changes to the Extension will not update the uploaded Extension. When finished making changes, you will need to upload the Extension in Airship again.**
 
-## Testing Extension on iOS (Availability: iOS (662))
+## Testing on iOS
 
-**Note: Only the Extensions that leverage the new HTTP scheme are supported.**
+**Note: You must include interactive-manifest.json at the root of the extension for this debugging setup to work. The contents of the file can simply be an empty object ({})**
 
 extension-cli can speed up testing of Extensions on iOS. Specifically it provides the following 2 features:
 
@@ -65,7 +65,7 @@ You can navigate to the Extension in Airship or Viewer by using the `open` comma
 	extension-cli open airship
 	extension-cli open viewer
 
-## Using multiple config files (requires v1.7.1)
+## Using multiple config files
 
 When you are using build tools such as Grunt, or Gulp, and compiling your single page application to a folder such as `dist`, you may not want the `mfly-interactive.config.json` file in your `dist` folder. 
 This folder could be deleted and recreated during a file watch trigger that recompiles the whole app. In this case, you can put your config file in the parent folder of the `dist` folder, and point `extension-cli` at that config file.

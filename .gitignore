@@ -32,3 +32,4 @@ app.mext
 
 # Vagrant
 .vagrant
+token.json
