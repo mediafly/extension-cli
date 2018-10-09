@@ -1,6 +1,6 @@
 {
   "name": "@mediafly/extension-cli",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Development utility for Mediafly Extensions",
   "main": "lib/proxy.js",
   "author": "Mediafly Inc.",
