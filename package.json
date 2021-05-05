@@ -27,11 +27,11 @@
     "opn": "5.3.0",
     "q": "1.5.1",
     "random-words": "1.1.0",
-    "request": "2.85.0",
+    "request": "2.88.0",
     "update-notifier": "2.5.0",
     "uuid": "3.2.1",
     "winston": "2.4.2",
-    "yargs": "11.0.0"
+    "yargs": "17.0.1"
   },
   "bin": {
     "extension-cli": "bin/index.js"
@@ -40,6 +40,6 @@
     "test": "mocha"
   },
   "devDependencies": {
-    "mocha": "5.2.0"
+    "mocha": "^8.3.2"
   }
 }
